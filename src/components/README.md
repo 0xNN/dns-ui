@@ -40,7 +40,7 @@ module.exports = {
 ### 1. Definisi Kolom
 
 ```tsx
-import { DataTableColumn } from '@/components/dns-ui';
+import { DataTableColumn } from '@/components/dns-ui/data-table';
 
 const columns: DataTableColumn<User>[] = [
   {
@@ -61,7 +61,7 @@ const columns: DataTableColumn<User>[] = [
 ### 2. Implementasi di Komponen
 
 ```tsx
-import { DataTable, DataTableProvider } from '@/components/dns-ui';
+import { DataTable, DataTableProvider } from '@/components/dns-ui/data-table';
 
 function MyPage() {
   return (

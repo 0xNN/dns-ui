@@ -12,7 +12,7 @@ npx shadcn@latest add https://raw.githubusercontent.com/0xNN/dns-ui/main/registr
 
 This will automatically:
 - Copy all component files to your project
-- Place files in the correct directories (`components/data-table/`, `components/ui/`, `lib/`)
+- Place files in the correct directories (`components/dns-ui/data-table/`, `components/dns-ui/ui/`, `lib/dns-ui/`)
 
 ### Manual Installation
 
@@ -32,8 +32,8 @@ npx shadcn@latest add button input select popover calendar table skeleton checkb
 ## Usage
 
 ```tsx
-import { DataTable, DataTableProvider } from '@/components/data-table';
-import type { DataTableColumn } from '@/components/data-table';
+import { DataTable, DataTableProvider } from '@/components/dns-ui/data-table';
+import type { DataTableColumn } from '@/components/dns-ui/data-table';
 
 interface User {
   id: number;

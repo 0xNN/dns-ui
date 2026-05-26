@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const PACKAGE_DIR = path.join(ROOT, 'src', 'components');
 const REGISTRY_DIR = path.join(ROOT, 'registry');
+const REGISTRY_PREFIX = 'dns-ui';
 
 // All files to include from package/
 const PACKAGE_FILES = [
@@ -75,38 +76,38 @@ function readFile(filePath) {
 }
 
 function normalizeImports(content, filePath) {
-  // Convert relative imports like '../ui/table' to '@/components/ui/table'
+  // Convert relative imports like '../ui/table' to '@/components/dns-ui/ui/table'
   content = content.replace(
     /from ['"]\.\.\/ui\/(.+?)['"]/g,
-    "from '@/components/ui/$1'"
+    `from '@/components/${REGISTRY_PREFIX}/ui/$1'`
   );
 
-  // Convert relative imports like '../lib/utils' to '@/lib/utils'
+  // Convert relative imports like '../lib/utils' to '@/lib/dns-ui/utils'
   content = content.replace(
     /from ['"]\.\.\/lib\/(.+?)['"]/g,
-    "from '@/lib/$1'"
+    `from '@/lib/${REGISTRY_PREFIX}/$1'`
   );
 
-  // Convert relative imports like './lib/utils' to '@/lib/utils'
+  // Convert relative imports like './lib/utils' to '@/lib/dns-ui/utils'
   content = content.replace(
     /from ['"]\.\/lib\/(.+?)['"]/g,
-    "from '@/lib/$1'"
+    `from '@/lib/${REGISTRY_PREFIX}/$1'`
   );
 
   // Convert relative context imports within data-table
-  // './contexts/FilterContext' -> '@/components/data-table/contexts/FilterContext'
-  // './selection/RowCheckbox' -> '@/components/data-table/selection/RowCheckbox'
-  // './filters/...' -> '@/components/data-table/filters/...'
-  // './pagination/...' -> '@/components/data-table/pagination/...'
+  // './contexts/FilterContext' -> '@/components/dns-ui/data-table/contexts/FilterContext'
+  // './selection/RowCheckbox' -> '@/components/dns-ui/data-table/selection/RowCheckbox'
+  // './filters/...' -> '@/components/dns-ui/data-table/filters/...'
+  // './pagination/...' -> '@/components/dns-ui/data-table/pagination/...'
   content = content.replace(
     /from ['"]\.\/(contexts|filters|pagination|selection)\/(.+?)['"]/g,
-    "from '@/components/data-table/$1/$2'"
+    `from '@/components/${REGISTRY_PREFIX}/data-table/$1/$2'`
   );
 
-  // Convert './types' -> '@/components/data-table/types'
+  // Convert './types' -> '@/components/dns-ui/data-table/types'
   content = content.replace(
     /from ['"]\.\/types['"]/g,
-    "from '@/components/data-table/types'"
+    `from '@/components/${REGISTRY_PREFIX}/data-table/types'`
   );
 
   return content;
@@ -134,13 +135,13 @@ function buildRegistry() {
     // Determine target path
     let target;
     if (relPath.startsWith('data-table/')) {
-      target = `components/data-table/${relPath.slice('data-table/'.length)}`;
+      target = `components/${REGISTRY_PREFIX}/data-table/${relPath.slice('data-table/'.length)}`;
     } else if (relPath.startsWith('lib/')) {
-      target = `lib/${relPath.slice('lib/'.length)}`;
+      target = `lib/${REGISTRY_PREFIX}/${relPath.slice('lib/'.length)}`;
     } else if (relPath === 'index.ts') {
-      target = 'components/data-table/index.ts';
+      target = `components/${REGISTRY_PREFIX}/data-table/index.ts`;
     } else {
-      target = `components/${relPath}`;
+      target = `components/${REGISTRY_PREFIX}/${relPath}`;
     }
 
     files.push({
@@ -164,7 +165,7 @@ function buildRegistry() {
 
     files.push({
       path: relPath,
-      target: `components/${relPath}`,
+      target: `components/${REGISTRY_PREFIX}/${relPath}`,
       content,
       type: 'registry:ui',
     });
