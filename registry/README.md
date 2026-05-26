@@ -1,4 +1,4 @@
-# Puninar DataTable
+# DNS UI DataTable
 
 Advanced data table component for React with sticky columns, filtering, sorting, pagination, and selection.
 
@@ -7,7 +7,7 @@ Advanced data table component for React with sticky columns, filtering, sorting,
 ### Using shadcn CLI (Recommended)
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/puninar/tms-billing/main/registry/data-table.json
+npx shadcn@latest add https://raw.githubusercontent.com/dns-ui/tms-billing/main/registry/data-table.json
 ```
 
 This will automatically:
@@ -16,7 +16,7 @@ This will automatically:
 
 ### Manual Installation
 
-1. Copy the `src/components/package/` folder to your project (e.g., `src/components/puninar-ui/`)
+1. Copy the `src/components/package/` folder to your project (e.g., `src/components/dns-ui/`)
 2. Install dependencies:
 
 ```bash

@@ -1,7 +1,7 @@
 {
   "name": "dns-ui",
   "version": "1.0.0",
-  "description": "Puninar UI - Advanced DataTable component library",
+  "description": "DNS UI - Advanced DataTable component library",
   "type": "module",
   "scripts": {
     "build:registry": "node scripts/build-registry.mjs"
@@ -17,6 +17,6 @@
     "react-dom": ">=18",
     "tailwindcss": ">=4"
   },
-  "keywords": ["react", "data-table", "ui", "components", "puninar"],
+  "keywords": ["react", "data-table", "ui", "components", "dns-ui"],
   "license": "MIT"
 }

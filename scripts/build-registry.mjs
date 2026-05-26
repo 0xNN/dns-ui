@@ -172,9 +172,9 @@ function buildRegistry() {
 
   const registry = {
     $schema: 'https://ui.shadcn.com/schema/registry-item.json',
-    name: 'puninar-data-table',
+    name: 'dns-ui-data-table',
     type: 'registry:ui',
-    title: 'Puninar DataTable',
+    title: 'DNS UI DataTable',
     description: 'Advanced data table with sticky columns, filtering, sorting, and pagination',
     dependencies: ['lucide-react', 'date-fns', 'clsx', 'tailwind-merge'],
     registryDependencies: [],

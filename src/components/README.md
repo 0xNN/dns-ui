@@ -1,6 +1,6 @@
-# Puninar-UI: DataTable Package
+# DNS-UI: DataTable Package
 
-Library komponen tabel tingkat lanjut yang dirancang khusus untuk ekosistem aplikasi Puninar. Komponen ini menyediakan fitur tabel yang kaya seperti *sticky columns*, pencarian, penyaringan (filtering), pengurutan (sorting), dan penomoran baris otomatis.
+Library komponen tabel tingkat lanjut yang dirancang khusus untuk ekosistem aplikasi DNS. Komponen ini menyediakan fitur tabel yang kaya seperti *sticky columns*, pencarian, penyaringan (filtering), pengurutan (sorting), dan penomoran baris otomatis.
 
 ## Fitur Utama
 
@@ -21,7 +21,7 @@ npm install lucide-react date-fns clsx tailwind-merge date-fns crypto-js
 
 ## Cara Instalasi di Proyek Lain
 
-1.  Salin folder `package/` ini ke dalam folder komponen proyek Anda (misal: `src/components/puninar-ui`).
+1.  Salin folder `package/` ini ke dalam folder komponen proyek Anda (misal: `src/components/dns-ui`).
 2.  **Penting!** Tambahkan path komponen ini ke dalam `tailwind.config.js` Anda agar gaya visualnya tidak terhapus:
 
 ```javascript
@@ -29,7 +29,7 @@ npm install lucide-react date-fns clsx tailwind-merge date-fns crypto-js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./src/components/puninar-ui/**/*.{js,jsx,ts,tsx}", // Tambahkan baris ini
+    "./src/components/dns-ui/**/*.{js,jsx,ts,tsx}", // Tambahkan baris ini
   ],
   // ...
 }
@@ -40,7 +40,7 @@ module.exports = {
 ### 1. Definisi Kolom
 
 ```tsx
-import { DataTableColumn } from '@/components/puninar-ui';
+import { DataTableColumn } from '@/components/dns-ui';
 
 const columns: DataTableColumn<User>[] = [
   {
@@ -61,7 +61,7 @@ const columns: DataTableColumn<User>[] = [
 ### 2. Implementasi di Komponen
 
 ```tsx
-import { DataTable, DataTableProvider } from '@/components/puninar-ui';
+import { DataTable, DataTableProvider } from '@/components/dns-ui';
 
 function MyPage() {
   return (
