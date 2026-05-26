@@ -7,7 +7,7 @@ Advanced data table component for React with sticky columns, filtering, sorting,
 ### Using shadcn CLI (Recommended)
 
 ```bash
-npx shadcn@latest add https://raw.githubusercontent.com/dns-ui/tms-billing/main/registry/data-table.json
+npx shadcn@latest add https://raw.githubusercontent.com/0xNN/dns-ui/main/registry/data-table.json
 ```
 
 This will automatically:
